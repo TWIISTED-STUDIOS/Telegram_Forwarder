@@ -20,7 +20,7 @@ def forward(update, context):
 
 try:
     FORWARD_HANDLER = MessageHandler(
-        Filters.chat(FROM_CHATS) & Filters.document.file_extension(".jpg") & Filters.document.file_extension(".png") & Filters.document.file_extension(".stl") & Filters.document.file_extension(".obj") & Filters.document.file_extension(".zip") & Filters.document.file_extension(".rar") & Filters.document.file_extension(".gif") & Filters.document.file_extension(".7z") & ~Filters.status_update & ~Filters.command,
+        Filters.chat(FROM_CHATS) & ~Filters.status_update & ~Filters.command,
         forward,
         run_async=True
     )
